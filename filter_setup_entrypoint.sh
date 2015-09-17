@@ -7,7 +7,8 @@ set -e
 cat >> /etc/fluent/fluent.conf <<_EOF_
 
 <filter containerlog.**>
-  type docker_metadata
+  type grep  
+  exclude1 log ELB-HealthChecker
 </filter>
 
 <match containerlog.**>
@@ -17,10 +18,6 @@ cat >> /etc/fluent/fluent.conf <<_EOF_
   format json
   add_prefix filtered
 </match>
-
-<system>
-  log_level debug
-</system>
 
 _EOF_
 

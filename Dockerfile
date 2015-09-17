@@ -2,7 +2,7 @@ FROM blacklabelops/loggly
 MAINTAINER Paysavvy <mikem@paysavvy.com>
 
 RUN gem install fluent-plugin-burrow
-RUN gem install fluent-plugin-docker_metadata_filter
+RUN yum install -y vim
 
 ENV LOGS_DIRECTORIES=/var/lib/docker/containers
 ENV LOG_FILE_FORMAT=json
