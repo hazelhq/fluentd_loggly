@@ -5,7 +5,6 @@ RUN gem install fluent-plugin-burrow
 RUN gem install fluent-plugin-docker_metadata_filter
 
 ENV LOGS_DIRECTORIES=/var/lib/docker/containers
-ENV DISABLE_FILE_OUT=true
 ENV LOG_FILE_FORMAT=json
 
 #only configurable with filtered. prefix
