@@ -6,6 +6,13 @@ set -e
 
 cat >> /etc/fluent/fluent.conf <<_EOF_
 
+<source>
+  type forward
+  port 24224
+  bind 0.0.0.0
+  log_level debug
+</source>
+
 <filter containerlog.**>
   type grep  
   exclude1 log ELB-HealthChecker
